@@ -3,6 +3,7 @@ from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_bcrypt import Bcrypt
 from flask_login import LoginManager
+import os
 
 app = Flask(__name__)
 # permite o flask interligar varios arquivos de formularios, tabelas do banco, edicao visual, paginas frontend ...
@@ -13,16 +14,20 @@ app = Flask(__name__)
 # >>> secrets.token_hex(16)
 # >>> exit()
 
+
 # cria a configuração do app e do banco de dados
 app.config['SECRET_KEY'] = '4948e4bd059d478399d2ddf5d69f9d8c'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///comunidade.db' # caminho local onde o banco estará armazenado. Só seguir esse passo-a-passo padrão
+if os.getenv("DATABASE_URL"):
+    app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv("DATABASE_URL")
+else:
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///comunidade.db' # caminho local onde o banco estará armazenado. Só seguir esse passo-a-passo padrão
 
 database = SQLAlchemy(app)
 
 # só o site conseguirá criptografar e descriptografar a senha do app(site)
 bcrypt = Bcrypt(app)
 
-# necessaio para manter o controle de acesso do login conectado
+# necessario para manter o controle de acesso do login conectado
 login_manager = LoginManager(app)
 
 # é a pagina que o login manager vai redirecionar quando for exigido login para acessar o conteúdo da página
