@@ -1,0 +1,117 @@
+<!-- Construção do formulario de login e criar conta com algumas validações importantes -->
+<!-- Integra a função de dentro do python @app.route a este arquivo -->
+<!-- Os nomes dos botões de login e criar conta estão definidos separadamente no arquivo forms.py-->
+
+
+{% extends 'base.html' %}
+
+{% block body %}
+    <!-- <div style="text-align: center"> -->
+    <div class="container">
+
+        <h style='color: blue'>Faça Login ou Crie sua Conta para continuar</h>
+        <hr>
+        <div class="row">
+            <div class="col">
+                <form method='POST' action="" class="border p-4 mt-2"> <!-- Sempre coloca o método POST em formularios, pq quando faz uma requisição para o servidor enviando um formulario para o site precisa do metodo POST -->
+                    {{ Form_Login.csrf_token }}
+                    <legend>Login</legend>
+                    <fieldset>
+                        <div class="form-group">
+                            {{ Form_Login.email.label(class="form-control-label") }}
+                            {% if Form_Login.email.errors %}  <!-- mostra erro do campo preenchido errado -->
+                                {{ Form_Login.email(class="form-control is-invalid") }}
+                            <div class="invalid-feedback">
+                                {% for erro in Form_Login.email.errors %}
+                                    {{ erro }}
+                                {% endfor %}
+                            </div>
+                            {% else %}
+                                {{ Form_Login.email(class="form-control") }}
+                            {% endif %}
+                        </div>
+                        <div class="form-group">
+                            {{ Form_Login.senha.label(class="form-control-label") }}
+                            {% if Form_Login.senha.errors %}  <!-- mostra erro do campo preenchido errado -->
+                                {{ Form_Login.senha(class="form-control is-invalid") }}
+                            <div class="invalid-feedback">
+                                {% for erro in Form_Login.senha.errors %}
+                                    {{ erro }}
+                                {% endfor %}
+                            </div>
+                            {% else %}
+                                {{ Form_Login.senha(class="form-control") }}
+                            {% endif %}
+                        </div>
+                        <div class="form-group">
+                            {{ Form_Login.lembrar_dados.label(class="form-check-label") }}
+                            {{ Form_Login.lembrar_dados(class="form-check-input") }}
+                        </div>
+                    </fieldset>
+                    {{ Form_Login.botao_submit_login(class="btn btn-primary mt-2") }}
+                </form>
+            </div>
+            <div class="col">
+                <form method='POST' action="" class="border p-4 mt-2">
+                    {{ Form_CriarConta.csrf_token }}
+                    <legend>criar conta</legend>
+                    <fieldset>
+                        <div class="form-group">
+                            {{ Form_CriarConta.username.label(class="form-control-label") }}
+                            {% if Form_CriarConta.username.errors %}  <!-- mostra erro do campo preenchido errado -->
+                                {{ Form_CriarConta.username(class="form-control is-invalid") }}
+                            <div class="invalid-feedback">
+                                {% for erro in Form_CriarConta.username.errors %}
+                                    {{ erro }}
+                                {% endfor %}
+                            </div>
+                            {% else %}
+                                {{ Form_CriarConta.username(class="form-control") }}
+                            {% endif %}
+                        </div>
+                        <div class="form-group">
+                            {{ Form_CriarConta.email.label(class="form-control-label") }}
+                            {% if Form_CriarConta.email.errors %}  <!-- mostra erro do campo preenchido errado -->
+                                {{ Form_CriarConta.email(class="form-control is-invalid") }}
+                            <div class="invalid-feedback">
+                                {% for erro in Form_CriarConta.email.errors %}
+                                    {{ erro }}
+                                {% endfor %}
+                            </div>
+                            {% else %}
+                                {{ Form_CriarConta.email(class="form-control") }}
+                            {% endif %}
+                        </div>
+                        <div class="form-group">
+                            {{ Form_CriarConta.senha.label(class="form-control-label") }}
+                            {% if Form_CriarConta.senha.errors %}  <!-- mostra erro do campo preenchido errado -->
+                                {{ Form_CriarConta.senha(class="form-control is-invalid") }}
+                            <div class="invalid-feedback">
+                                {% for erro in Form_CriarConta.senha.errors %}
+                                    {{ erro }}
+                                {% endfor %}
+                            </div>
+                            {% else %}
+                                {{ Form_CriarConta.senha(class="form-control") }}
+                            {% endif %}
+                        </div>
+                        <div class="form-group">
+                            {{ Form_CriarConta.confirmacao_senha.label(class="form-control-label") }}
+                            {% if Form_CriarConta.confirmacao_senha.errors %}  <!-- mostra erro do campo preenchido errado -->
+                                {{ Form_CriarConta.confirmacao_senha(class="form-control is-invalid") }}
+                            <div class="invalid-feedback">
+                                {% for erro in Form_CriarConta.confirmacao_senha.errors %}
+                                    {{ erro }}
+                                {% endfor %}
+                            </div>
+                            {% else %}
+                                {{ Form_CriarConta.confirmacao_senha(class="form-control") }}
+                            {% endif %}
+                        </div>
+                    </fieldset>
+                        {{ Form_CriarConta.botao_submit_criarconta(class="btn btn-primary mt-2") }}
+                    </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}
