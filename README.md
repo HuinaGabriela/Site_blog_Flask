@@ -1,6 +1,29 @@
-# Site_Comunidade_flask
+📚 Site_Comunidade_Flask
+Este projeto é uma aplicação web desenvolvida com Flask (framework Python) que permite aos usuários criar uma conta, autenticar-se e publicar conteúdos relacionados a áreas de conhecimento específicas.
 
-Esse projeto trata do desenvolvimento de um site onde os usuários podem criar uma conta e se logar para postarem informações sobre um determinado assunto. Cada usuário pode criar quantos posts desejar e editar caso necessário, e apenas visualizar posts de outros usuários.
-O blog tem como opção para o usuário mostrar em seu post quais cursos ele já fez e espera-se que as postagens tenham como tema sobre às áreas de conhecimento.
-O projeto faz a criação de páginas personalizadas, tratamento de erros como, por exemplo, o usuário deve estar logado para acessar determinada página, usuários não podem ter o mesmo email, tratamento de senha, editar e excluir post só do usuário logado, tratamento da imagem do perfil.
-Foi utilizado framework Flask e bootstrap.
+⚙️ Funcionalidades Principais
+  * Autenticação de Usuário
+  - Registro com validação de e-mail único
+  - Login e logout seguros
+  - Armazenamento de senhas com hash (criptografia)
+  Proteção de rotas: páginas restritas a usuários autenticados
+
+  * Gerenciamento de Perfil
+    - Upload e atualização de imagem de perfil (com tratamento de arquivos)
+    - Página de perfil personalizada
+    - Listagem de cursos já realizados pelo usuário
+  
+  * Sistema de Postagens
+  - Criação, edição e exclusão de postagens
+  - Apenas o autor pode editar ou excluir seus próprios posts
+  - Exibição de posts de todos os usuários (somente leitura)
+  
+  * Temas das Postagens
+  - As publicações devem abordar temas relacionados a áreas de conhecimento específicas
+
+  * Tratamento de Erros e Validações
+  - Bloqueio de acesso a páginas protegidas para usuários não logados
+  - Validação de formulário para evitar e-mails duplicados
+  - Restrição de edição/exclusão de postagens por usuários não-autores
+  - Mensagens de erro e feedback ao usuário (flash messages)
+
