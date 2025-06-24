@@ -1,5 +1,6 @@
 📚 Site_Comunidade_Flask
-Este projeto é uma aplicação web desenvolvida com Flask (framework Python) que permite aos usuários criar uma conta, autenticar-se e publicar conteúdos relacionados a áreas de conhecimento específicas.
+
+Este projeto é uma aplicação web desenvolvida com Flask (framework Python) que permite aos usuários criar uma conta em um site blog, autenticar-se e publicar conteúdos relacionados a áreas de conhecimento específicas.
 
 ⚙️ Funcionalidades Principais
   * Autenticação de Usuário
