@@ -3,10 +3,10 @@ Este projeto é uma aplicação web desenvolvida com Flask (framework Python) qu
 
 ⚙️ Funcionalidades Principais
   * Autenticação de Usuário
-  - Registro com validação de e-mail único
-  - Login e logout seguros
-  - Armazenamento de senhas com hash (criptografia)
-  Proteção de rotas: páginas restritas a usuários autenticados
+   - Registro com validação de e-mail único
+   - Login e logout seguros
+   - Armazenamento de senhas com hash (criptografia)
+   Proteção de rotas: páginas restritas a usuários autenticados
 
   * Gerenciamento de Perfil
     - Upload e atualização de imagem de perfil (com tratamento de arquivos)
@@ -14,16 +14,16 @@ Este projeto é uma aplicação web desenvolvida com Flask (framework Python) qu
     - Listagem de cursos já realizados pelo usuário
   
   * Sistema de Postagens
-  - Criação, edição e exclusão de postagens
-  - Apenas o autor pode editar ou excluir seus próprios posts
-  - Exibição de posts de todos os usuários (somente leitura)
+   - Criação, edição e exclusão de postagens
+   - Apenas o autor pode editar ou excluir seus próprios posts
+   - Exibição de posts de todos os usuários (somente leitura)
   
   * Temas das Postagens
-  - As publicações devem abordar temas relacionados a áreas de conhecimento específicas
+   - As publicações devem abordar temas relacionados a áreas de conhecimento específicas
 
   * Tratamento de Erros e Validações
-  - Bloqueio de acesso a páginas protegidas para usuários não logados
-  - Validação de formulário para evitar e-mails duplicados
-  - Restrição de edição/exclusão de postagens por usuários não-autores
-  - Mensagens de erro e feedback ao usuário (flash messages)
+   - Bloqueio de acesso a páginas protegidas para usuários não logados
+   - Validação de formulário para evitar e-mails duplicados
+   - Restrição de edição/exclusão de postagens por usuários não-autores
+   - Mensagens de erro e feedback ao usuário (flash messages)
 
